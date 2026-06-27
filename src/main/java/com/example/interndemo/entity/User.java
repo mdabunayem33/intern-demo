@@ -14,7 +14,6 @@ public class User {
 
     private String email;
 
-    // Default constructor (required by JPA)
     public User() {}
 
     // Parameterized constructor
