@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
+        .card { background: white; padding: 30px; border-radius: 10px; max-width: 400px; }
+        h1 { color: #333; }
+        p { font-size: 18px; }
+        span { font-weight: bold; color: #4CAF50; }
+        a { color: #4CAF50; text-decoration: none; margin-right: 15px; }
+        a.delete { color: red; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>👤 User Details</h1>
+    <p>ID: <span th:text="${user.id}"></span></p>
+    <p>Name: <span th:text="${user.name}"></span></p>
+    <p>Email: <span th:text="${user.email}"></span></p>
+
+    <br>
+    <a th:href="@{/users/edit/{id}(id=${user.id})}">✏️ Edit</a>
+    <a class="delete" th:href="@{/users/delete/{id}(id=${user.id})}"
+       onclick="return confirm('Delete this user?')">🗑 Delete</a>
+    <a th:href="@{/users}">← Back to List</a>
+</div>
+
+</body>
+</html>
