@@ -20,7 +20,6 @@
     <h1 th:text="${user.id} ? '✏️ Edit User' : '➕ Add New User'"></h1>
 
     <form th:action="@{/users/save}" th:object="${user}" method="post">
-        <!-- Edit এর সময় ID পাঠাও -->
         <input type="hidden" th:field="*{id}"/>
 
         <label>Name:</label>
